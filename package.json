@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Nschulz88/github-avatar-downloader/issues"
   },
-  "homepage": "https://github.com/Nschulz88/github-avatar-downloader#readme"
+  "homepage": "https://github.com/Nschulz88/github-avatar-downloader#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
 }
