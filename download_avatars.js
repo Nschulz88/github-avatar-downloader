@@ -13,7 +13,21 @@ function getRepoContributors(repoOwner, repoName, cb) {
   };
 
   request(options, function(err, res, body) {
-    cb(err, body);
+      if (err) {
+        cb (err);
+        } else {
+          var newBody = JSON.parse(body);
+          var finalString = "";
+          newBody.forEach(function(user_information) {
+            finalString += user_information.avatar_url + "\n";
+          });
+
+          // for (i = 0; i < newBody.length; i++) {              // alternative to for EACH
+          //   var getAvatarUrl = newBody[i].avatar_url;
+          //   finalString += getAvatarUrl + "\n";
+          // }
+          cb (null, finalString);
+        }
   });
 
 }
